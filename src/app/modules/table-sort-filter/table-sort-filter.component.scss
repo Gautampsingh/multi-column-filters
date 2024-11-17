@@ -1,0 +1,36 @@
+.table-container {
+  margin: 0px auto;
+  width: 80%;
+  table {
+    width: 100%;
+    th.mat-header-cell {
+      padding-right: 10px;
+    }
+  }
+}
+
+mat-header-cell {
+  display: flex;
+  align-items: center;
+}
+
+.custom-sort-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  mat-icon {
+    position: relative;
+    top: 5px;
+  }
+}
+
+.custom-link-listing {
+  padding: 5px;
+  width: 50%;
+  margin: 10px auto;
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+  }
+}

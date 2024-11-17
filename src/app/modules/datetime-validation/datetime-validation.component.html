@@ -1,0 +1,62 @@
+<div class="custom-link-listing">
+  <ul>
+    <li><a href="/">Data grid</a></li>
+    <li><a href="/table-grid">Table grid</a></li>
+    <li><a href="/datetime-dropdown">Datetime dropdown</a></li>
+    <li><a href="/datetime-validation">Datetime validation</a></li>
+    <li><a href="/multi-column-filter">Multi Column filter</a></li>
+    <li><a href="/table-sort-filter">Table sort filter</a></li>
+  </ul>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+    <div class="container">
+        <div class="inner-div">
+            <div>
+                <label>From Date</label>
+                <input type="date" formControlName="fromDate" />
+              </div>
+              
+              <div>
+                <label>From Hour</label>
+                <select formControlName="fromHour">
+                  <option *ngFor="let hour of hours" [value]="hour['value']">{{ hour.text }}</option>
+                </select>
+              </div>
+              
+              <div>
+                <label>From Minute</label>
+                <select formControlName="fromMinute">
+                  <option *ngFor="let minute of minutes" [value]="minute">{{ minute }}</option>
+                </select>
+              </div>
+        </div>
+        <div class="inner-div">
+            <div>
+                <label>To Date</label>
+                <input type="date" formControlName="toDate" />
+              </div>
+              
+              <div>
+                <label>To Hour</label>
+                <select formControlName="toHour">
+                  <option *ngFor="let hour of hours" [value]="hour['value']">{{ hour.text }}</option>
+                </select>
+              </div>
+          
+              <div>
+                <label>To Minute</label>
+                <select formControlName="toMinute">
+                  <option *ngFor="let minute of minutes" [value]="minute">{{ minute }}</option>
+                </select>
+              </div>
+        </div>
+    </div>
+
+    <div class="custom-button">
+        <button type="submit" [disabled]="form.invalid">Submit</button>
+        <div *ngIf="form.hasError('invalidTime')">
+            <p style="color: red;">"To" time must be greater than "From" time.</p>
+        </div>
+    </div>
+</form>

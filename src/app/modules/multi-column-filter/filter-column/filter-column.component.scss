@@ -1,0 +1,21 @@
+.filter-box-container {
+    div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        span {
+            margin: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 8px 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}

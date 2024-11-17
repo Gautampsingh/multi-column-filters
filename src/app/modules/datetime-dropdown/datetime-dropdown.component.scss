@@ -1,0 +1,14 @@
+.error {
+    color: #f00;
+}
+
+.custom-link-listing {
+    padding: 5px;
+    width: 50%;
+    margin: 10px auto;
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+    }
+  }

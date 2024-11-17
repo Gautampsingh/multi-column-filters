@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>Filter {{ data.column }}</h2>
+    <mat-form-field appearance="fill">
+      <mat-label>Filter value</mat-label>
+      <input matInput [formControl]="filterControl" />
+    </mat-form-field>
+    <div mat-dialog-actions>
+      <button mat-button (click)="onClose()">Cancel</button>
+      <button mat-button (click)="onApply()">Apply</button>
+    </div>

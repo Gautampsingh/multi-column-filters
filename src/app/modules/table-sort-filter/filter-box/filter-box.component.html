@@ -1,0 +1,10 @@
+<div class="filter-box-container">
+  <div>
+    <span>Filter: </span>
+    <span><input type="text" placeholder="{{filterName}}" (change)="searchKey($event)" [(ngModel)]="searchText" /></span>
+  </div>
+  <div>
+    <button (click)="resetFilterText()">Reset</button>
+    <button (click)="searchFilterText()">Search</button>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="custom-link-listing">
+  <ul>
+    <li><a href="/">Data grid</a></li>
+    <li><a href="/table-grid">Table grid</a></li>
+    <li><a href="/datetime-dropdown">Datetime dropdown</a></li>
+    <li><a href="/datetime-validation">Datetime validation</a></li>
+    <li><a href="/multi-column-filter">Multi Column filter</a></li>
+    <li><a href="/table-sort-filter">Table sort filter</a></li>
+  </ul>
+</div>
+
+<table mat-table [dataSource]="filteredData" class="mat-elevation-z8">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>
+        <div class="headerMain">
+          <div>Name</div>
+          <div class="customMatIcon"><mat-icon (click)="openFilterDialog('name')">filter_list</mat-icon></div>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <!-- Age Column -->
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef>
+        <div class="headerMain">
+          <div>Age</div>
+          <div class="customMatIcon"><mat-icon (click)="openFilterDialog('age')">filter_list</mat-icon></div>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.age }}</td>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>
+        <div class="headerMain">
+          <div>Email</div>
+          <div class="customMatIcon"><mat-icon (click)="openFilterDialog('email')">filter_list</mat-icon></div>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

@@ -1,0 +1,13 @@
+<div class="filter-box-container">
+    <div>
+      <span>Filter: </span>
+      <span>
+        <input type="text" placeholder="{{filterName}}" [(ngModel)]="searchText" />
+        <!-- <input matInput [(ngModel)]="filterValues[column]" (input)="applyFilter(column, $event)" placeholder="Filter {{ column }}" /> -->
+      </span>
+    </div>
+    <div>
+      <button (click)="filterClear()">Reset</button>
+      <button (click)="filterSearch()">Search</button>
+    </div>
+  </div>
